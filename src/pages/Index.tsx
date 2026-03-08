@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Bot, Sparkles, Wand2, Users } from "lucide-react";
+import { Bot, Sparkles, Wand2, Users, MousePointerClick, PenTool, CloudDownload } from "lucide-react";
 
 const FeatureCard = ({ icon: Icon, title, description, delay }: { icon: any, title: string, description: string, delay: number }) => (
   <motion.div
@@ -31,6 +31,89 @@ const Index = () => {
       {/* 1. HERO SECTION (Kept exact same component as requested) */}
       <section id="hero" aria-label="Hero section">
         <Hero />
+      </section>
+
+      {/* 1.5. HOW IT WORKS SECTION */}
+      <section className="relative py-24 px-4 sm:px-8 lg:px-12 bg-black overflow-hidden border-t border-white/5">
+        {/* Floating abstract blobs */}
+        <div className="absolute top-[10%] left-[-10%] w-[30%] h-[40%] bg-accent-blue/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute bottom-[10%] right-[-10%] w-[30%] h-[40%] bg-accent-purple/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight"
+            >
+              Experience the <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-purple to-accent-blue italic pr-2 font-serif">future</span> of design
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-16">
+            {/* Step 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center text-center group"
+            >
+              <div className="w-28 h-28 mb-8 relative flex items-center justify-center">
+                <div className="absolute inset-0 bg-accent-blue/20 rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
+                <div className="absolute inset-0 bg-black/80 border border-white/10 rounded-3xl -rotate-3 group-hover:rotate-0 transition-transform duration-500 flex items-center justify-center glass-effect backdrop-blur-xl">
+                  <MousePointerClick className="w-12 h-12 text-accent-blue" strokeWidth={1.5} />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Create projects</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Tell us what you need — design, video, ads, animations, you name it. No complicated proposals or back-and-forths.
+              </p>
+            </motion.div>
+
+            {/* Step 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center text-center group"
+            >
+              <div className="w-28 h-28 mb-8 relative flex items-center justify-center">
+                <div className="absolute inset-0 bg-accent-purple/20 rounded-3xl -rotate-6 group-hover:-rotate-12 transition-transform duration-500"></div>
+                <div className="absolute inset-0 bg-black/80 border border-white/10 rounded-3xl rotate-3 group-hover:rotate-0 transition-transform duration-500 flex items-center justify-center glass-effect backdrop-blur-xl">
+                  <PenTool className="w-12 h-12 text-accent-purple" strokeWidth={1.5} />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Get matched & create</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Your dedicated team gets to work immediately. Expect fast turnarounds and jaw-dropping results.
+              </p>
+            </motion.div>
+
+            {/* Step 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center text-center group"
+            >
+              <div className="w-28 h-28 mb-8 relative flex items-center justify-center">
+                <div className="absolute inset-0 bg-accent-emerald/20 rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
+                <div className="absolute inset-0 bg-black/80 border border-white/10 rounded-3xl -rotate-3 group-hover:rotate-0 transition-transform duration-500 flex items-center justify-center glass-effect backdrop-blur-xl">
+                  <CloudDownload className="w-12 h-12 text-accent-emerald" strokeWidth={1.5} />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Review, revise, approve</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Love it? Download and go. Need tweaks? Unlimited revisions until it's perfect. Simple.
+              </p>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* 2. INTRODUCTION SECTION */}
