@@ -99,16 +99,15 @@ const Index = () => {
                 </div>
 
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 relative z-10">
-                  For AI Creators,<br />
-                  <span className="text-muted-foreground">& Digital Twins</span>
+                  For AI Creators
                 </h3>
 
                 <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed relative z-10">
-                  Generate high-quality images and videos at scale. Monetize your unique AI workflows, digital personas, and creative capabilities on a global platform.
+                  Generate high-quality images and videos at scale. Monetize your unique AI workflows and creative capabilities on a global platform.
                 </p>
 
                 <ul className="space-y-4 mb-10 relative z-10">
-                  {["Monetize generative models", "License digital twins", "Global reach & distribution"].map((item, i) => (
+                  {["Monetize generative models", "Direct brand collaborations", "Global reach & distribution"].map((item, i) => (
                     <li key={i} className="flex items-center text-white/80">
                       <Sparkles className="w-5 h-5 text-accent-blue mr-3 shrink-0" />
                       <span>{item}</span>

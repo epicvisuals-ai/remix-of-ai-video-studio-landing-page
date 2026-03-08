@@ -28,14 +28,14 @@ export function Hero() {
       videoRef.current.volume = 0
       videoRef.current.muted = true
       videoRef.current.defaultMuted = true
-      
+
       // Add event listeners for debugging
       videoRef.current.addEventListener('loadstart', () => console.log('Video: loadstart'))
       videoRef.current.addEventListener('loadedmetadata', () => console.log('Video: loadedmetadata'))
       videoRef.current.addEventListener('canplay', () => console.log('Video: canplay'))
       videoRef.current.addEventListener('playing', () => console.log('Video: playing'))
       videoRef.current.addEventListener('error', (e) => console.error('Video error:', e))
-      
+
       // Force mute on play
       videoRef.current.addEventListener('play', () => {
         if (videoRef.current) {
@@ -44,7 +44,7 @@ export function Hero() {
           videoRef.current.volume = isMuted ? 0 : 0.7
         }
       })
-      
+
       // Try to play the video
       const playPromise = videoRef.current.play()
       if (playPromise !== undefined) {
@@ -107,7 +107,7 @@ export function Hero() {
         loop
         playsInline
       >
-        <source src="https://mojli.s3.us-east-2.amazonaws.com/Mojli+Website+upscaled+(12mb).webm" type="video/webm" />
+        <source src="/Mojli+Website+upscaled+(12mb).webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
 
@@ -118,12 +118,11 @@ export function Hero() {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="fixed top-0 left-0 right-0 w-full z-[110]"
       >
-        <div 
-          className={`w-full px-6 sm:px-8 lg:px-12 py-4 transition-all duration-300 ease-out ${
-            isScrolled 
-              ? 'bg-black/80 backdrop-blur-xl border-b border-white/10' 
+        <div
+          className={`w-full px-6 sm:px-8 lg:px-12 py-4 transition-all duration-300 ease-out ${isScrolled
+              ? 'bg-black/80 backdrop-blur-xl border-b border-white/10'
               : 'bg-transparent'
-          }`}
+            }`}
         >
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -139,6 +138,7 @@ export function Hero() {
 
             {/* Navigation Menu */}
             <div className="hidden md:flex items-center space-x-8">
+              {/*
               <a 
                 href="#portfolio" 
                 className="text-white hover:text-white/80 font-medium gentle-animation hover:scale-105"
@@ -169,6 +169,7 @@ export function Hero() {
               >
                 Contact
               </a>
+              */}
             </div>
 
             {/* Right Side - Video Controls + CTA + Mobile Menu */}
@@ -181,7 +182,7 @@ export function Hero() {
                 >
                   {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
                 </button>
-                
+
                 {/* Sound On indicator - only show when muted */}
                 {isMuted && (
                   <div className="absolute -bottom-10 right-0 flex items-center text-white/80">
@@ -190,7 +191,7 @@ export function Hero() {
                   </div>
                 )}
               </div>
-              
+
               {/* CTA Button - Hidden on mobile */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -246,10 +247,11 @@ export function Hero() {
               <X className="w-5 h-5" />
             </button>
           </div>
-          
+
           <div className="flex flex-col px-6 pb-6 h-full">
             {/* Mobile Navigation Links */}
             <div className="flex flex-col space-y-4 text-white">
+              {/*
               <a 
                 href="#portfolio" 
                 className="mobile-menu-link px-4 py-3 hover:text-white/80 hover:bg-white/10 rounded-lg gentle-animation font-medium text-lg active:bg-white/20"
@@ -285,6 +287,7 @@ export function Hero() {
               >
                 Contact
               </a>
+              */}
             </div>
 
             {/* Mobile CTA Button */}
