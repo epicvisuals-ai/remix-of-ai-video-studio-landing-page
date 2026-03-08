@@ -3,7 +3,8 @@ import { Card } from "@/components/ui/card";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Bot, Sparkles, Wand2, Users, MousePointerClick, PenTool, CloudDownload } from "lucide-react";
+import { Bot, Sparkles, Wand2, Users, MousePointerClick, PenTool, CloudDownload, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const FeatureCard = ({ icon: Icon, title, description, delay }: { icon: any, title: string, description: string, delay: number }) => (
   <motion.div
@@ -25,8 +26,73 @@ const FeatureCard = ({ icon: Icon, title, description, delay }: { icon: any, tit
 );
 
 const Index = () => {
+  const faqs = [
+    {
+      question: "What is EpicVisuals?",
+      answer: "EpicVisuals is an AI-powered visual content marketplace that connects elite generative AI creators with brands and marketers. We provide a platform for on-demand, custom AI-generated images and videos at scale."
+    },
+    {
+      question: "How does the content generation process work?",
+      answer: "Brands submit their visual requirements or creative briefs. Our platform then matches these requests with top-tier AI creators who use advanced generative models to produce high-quality, custom assets. You review the results, request revisions if needed, and download the final files."
+    },
+    {
+      question: "Can brands own the AI-generated content?",
+      answer: "Yes, brands receive full commercial rights to the final approved content delivered through the EpicVisuals platform, allowing for unrestricted use in marketing, advertising, and other commercial applications."
+    },
+    {
+      question: "What kind of visual content can be created?",
+      answer: "Our creators can generate a wide range of content including photorealistic lifestyle imagery, product mockups, conceptual art, short-form video animations, and specialized visual assets tailored to your brand's unique aesthetic."
+    },
+    {
+      question: "How does EpicVisuals ensure quality?",
+      answer: "We curate our creator community, accepting only those with proven expertise in advanced prompt engineering and AI model workflows. Additionally, our platform includes unlimited revisions to ensure the final output perfectly matches your creative vision."
+    }
+  ];
+
+  const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+      <div className="border-b border-white/10 last:border-0">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full py-6 flex items-center justify-between text-left focus:outline-none group"
+          aria-expanded={isOpen}
+        >
+          <span className="text-xl font-medium text-white group-hover:text-accent-blue transition-colors pr-8">
+            {question}
+          </span>
+          <ChevronDown
+            className={`w-6 h-6 text-white/50 transition-transform duration-300 ${isOpen ? "rotate-180 text-accent-blue" : ""}`}
+          />
+        </button>
+        <div
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100 pb-6" : "max-h-0 opacity-0"}`}
+        >
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            {answer}
+          </p>
+        </div>
+      </div>
+    );
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-black text-foreground overflow-x-hidden selection:bg-accent-blue/30">
+      {/* Inject FAQPage Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* 1. HERO SECTION (Kept exact same component as requested) */}
       <section id="hero" aria-label="Hero section">
@@ -198,7 +264,7 @@ const Index = () => {
                   ))}
                 </ul>
 
-                <Button className="w-full sm:w-auto relative z-10 bg-white text-black hover:bg-white/90 font-semibold px-8 py-6 rounded-xl text-lg transition-transform hover:scale-105">
+                <Button onClick={() => window.location.href = 'https://app.epicvisuals.ai/auth?utm_source=creators&utm_campaign=join_now'} className="w-full sm:w-auto relative z-10 bg-white text-black hover:bg-white/90 font-semibold px-8 py-6 rounded-xl text-lg transition-transform hover:scale-105">
                   Join as Creator
                 </Button>
               </div>
@@ -248,6 +314,26 @@ const Index = () => {
               </div>
             </motion.div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ SECTION for AEO/GEO */}
+      <section className="py-24 px-4 sm:px-8 lg:px-12 relative overflow-hidden border-t border-white/5">
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+              Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-accent-purple italic pr-2 font-serif">Questions</span>
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              Everything you need to know about EpicVisuals and how our AI creator marketplace works.
+            </p>
+          </div>
+
+          <div className="glass-effect rounded-3xl p-6 md:p-10 border border-white/10">
+            {faqs.map((faq, i) => (
+              <FAQItem key={i} question={faq.question} answer={faq.answer} />
+            ))}
           </div>
         </div>
       </section>
