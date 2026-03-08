@@ -1,4 +1,5 @@
 'use client'
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   const aiTools = [
@@ -115,11 +116,20 @@ export function Footer() {
 
         {/* Bottom Bar - Simplified */}
         <div className="border-t border-background/20 pt-8 mt-16">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-sm text-background/70 mb-4 md:mb-0">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
+            <div className="text-sm text-background/70">
               © 2026 Epic Visuals. All rights reserved.
             </div>
-            <div className="text-sm text-background/70">
+
+            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-background/70">
+              <Link to="/terms-of-service" className="hover:text-background transition-colors">Terms of Service</Link>
+              <Link to="/privacy-policy" className="hover:text-background transition-colors">Privacy Policy</Link>
+              <Link to="/content-license-terms" className="hover:text-background transition-colors">Content License</Link>
+              <Link to="/acceptable-use-policy" className="hover:text-background transition-colors">Acceptable Use</Link>
+              <Link to="/ai-content-policy" className="hover:text-background transition-colors">AI Content</Link>
+            </div>
+
+            <div className="text-sm text-background/70 hidden lg:block">
               2847 HIGHLAND AVE. SUITE 310 BIRMINGHAM 35205, AL, USA
             </div>
           </div>
