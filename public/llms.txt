@@ -1,0 +1,18 @@
+# EpicVisuals
+
+> An AI-powered visual content marketplace connecting generative AI creators with brands for on-demand custom images and videos.
+
+EpicVisuals connects you with talented AI creators for your content needs. Post your brief, get quotes, and bring your vision to life. Make it epic.
+
+## Key Information
+- **URL**: https://epicvisuals.ai/
+- **Description**: Generate high-quality images and videos at scale. EpicVisuals connects brands with talented AI creators for on-demand custom content.
+- **Twitter**: https://twitter.com/epicvisuals_ai
+- **LinkedIn**: https://www.linkedin.com/company/epicvisuals
+
+## Important Links
+- [Terms of Service](https://epicvisuals.ai/terms-of-service)
+- [Privacy Policy](https://epicvisuals.ai/privacy-policy)
+- [Content License Terms](https://epicvisuals.ai/content-license-terms)
+- [Acceptable Use Policy](https://epicvisuals.ai/acceptable-use-policy)
+- [AI Content Policy](https://epicvisuals.ai/ai-content-policy)
