@@ -120,8 +120,8 @@ export function Hero() {
       >
         <div
           className={`w-full px-6 sm:px-8 lg:px-12 py-4 transition-all duration-300 ease-out ${isScrolled
-              ? 'bg-black/80 backdrop-blur-xl border-b border-white/10'
-              : 'bg-transparent'
+            ? 'bg-black/80 backdrop-blur-xl border-b border-white/10'
+            : 'bg-transparent'
             }`}
         >
           <div className="flex items-center justify-between">
@@ -197,12 +197,11 @@ export function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
-                  const contactSection = document.getElementById('contact')
-                  contactSection?.scrollIntoView({ behavior: 'smooth' })
+                  window.location.href = 'https://app.epicvisuals.ai/auth?utm_source=hero&utm_campaign=join_now'
                 }}
                 className="hidden sm:block bg-red-600 backdrop-blur-sm text-white font-semibold px-6 py-3 rounded-md hover:bg-red-700 gentle-animation ml-4 cursor-pointer"
               >
-                Book a Call
+                Join now
               </motion.button>
 
               {/* Mobile Hamburger Menu Button */}
@@ -295,13 +294,11 @@ export function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => {
-                const contactSection = document.getElementById('contact')
-                contactSection?.scrollIntoView({ behavior: 'smooth' })
-                setIsMobileMenuOpen(false)
+                window.location.href = 'https://app.epicvisuals.ai/auth?utm_source=hero_mobile&utm_campaign=join_now'
               }}
               className="bg-red-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-red-700 active:bg-red-800 gentle-animation mt-8 cursor-pointer"
             >
-              Book a Call
+              Join now
             </motion.button>
           </div>
         </div>

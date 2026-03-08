@@ -129,9 +129,6 @@ export function Footer() {
               <Link to="/ai-content-policy" className="hover:text-background transition-colors">AI Content</Link>
             </div>
 
-            <div className="text-sm text-background/70 hidden lg:block">
-              2847 HIGHLAND AVE. SUITE 310 BIRMINGHAM 35205, AL, USA
-            </div>
           </div>
         </div>
       </div>

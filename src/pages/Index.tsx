@@ -239,7 +239,10 @@ const Index = () => {
                   ))}
                 </ul>
 
-                <Button className="w-full sm:w-auto relative z-10 bg-transparent border-2 border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-6 rounded-xl text-lg transition-all hover:scale-105">
+                <Button
+                  onClick={() => window.location.href = 'https://app.epicvisuals.ai/auth?utm_source=brands&utm_campaign=request_content'}
+                  className="w-full sm:w-auto relative z-10 bg-transparent border-2 border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-6 rounded-xl text-lg transition-all hover:scale-105"
+                >
                   Request Content
                 </Button>
               </div>
