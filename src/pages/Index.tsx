@@ -216,7 +216,7 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
-            Focused on next-generation digital creators. EpicVisuals.ai bridges the gap between groundbreaking artificial intelligence and commercial brand needs.
+            Focused on next-generation digital creators. EpicVisuals bridges the gap between groundbreaking artificial intelligence and commercial brand needs.
           </motion.p>
         </div>
       </section>
